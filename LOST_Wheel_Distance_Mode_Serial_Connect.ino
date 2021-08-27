@@ -115,7 +115,7 @@ void loop()
 
 void sensor () { //interrupt to measure rotations
   count++; //every time hall effect sensor goes off, add 1 to count
-  distance = (count * .054 * 2 * 3.14);
+  distance = (count * .054 * 2 * 3.14 / 2);
 }
 
 void screen () { //function to update screen
