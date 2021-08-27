@@ -128,11 +128,10 @@ interrupts();
 printTime = millis() / 1000 / 60 ; //time in minutes since power on 
 Serial.print(float(millis()/1000.0));
 Serial.print(",");
-Serial.println(countCopy * .054 * 2 * 3.14);
+Serial.println(countCopy * .054 * 2 * 3.14 / 2);
 
   u8x8.setCursor(1, 4);
-  u8x8.print(countCopy * .054 * 2 * 3.14); //distance in meters (2 * pi * r)
-
+  u8x8.print(countCopy * .054 * 2 * 3.14 / 2); //distance in meters (2 * pi * r)/2 magnets
 
 
 

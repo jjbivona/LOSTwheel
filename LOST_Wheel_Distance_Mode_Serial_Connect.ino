@@ -11,9 +11,9 @@
 ///////////////////////////////////////////////////
 //////THIS IS ALL THAT NEEDS TO BE CHANGED/////////
 ///////////////////////////////////////////////////
-                                               ////
+////
 float threshold = 10; //distance in meters     ////
-                                               ////
+////
 ///////////////////////////////////////////////////
 float distance;
 
@@ -115,13 +115,16 @@ void loop()
 
 void sensor () { //interrupt to measure rotations
   count++; //every time hall effect sensor goes off, add 1 to count
-  distance = (count * .054 * 2 * 3.14 / 2);
+  distance = (count * .054 * 2 * 3.14);
 }
 
 void screen () { //function to update screen
   noInterrupts();
   long countCopy = count;  //make a copy of count with interrupts turned off
   interrupts();
+  Serial.print(float(millis() / 1000.0));
+  Serial.print(",");
+  Serial.println(countCopy * .054 * 2 * 3.14 / 2);
 
   u8x8.setCursor(1, 4);
   u8x8.print(countCopy * .054 * 2 * 3.14 / 2); //distance in meters (2 * pi * r)/2 magnets
