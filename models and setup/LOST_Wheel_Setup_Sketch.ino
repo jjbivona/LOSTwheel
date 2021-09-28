@@ -48,6 +48,8 @@ void setup()
 void loop()
 {
   myservo.write(openpos);
+  u8x8.setCursor(1, 5);
+  u8x8.print("open");
   delay(1000);
   screen();
   
@@ -79,6 +81,8 @@ void loop()
   screen();
 
 myservo.write(lockedpos);
+  u8x8.setCursor(1, 5);
+  u8x8.print("lock");
   delay(1000);
   screen();
   
