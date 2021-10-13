@@ -20,13 +20,10 @@ volatile long count; //rotation count
 U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(A5, A4);
 
 
-bool lock = true;
 
-unsigned long previousMillis = 0;
+void setup()
+{
 
-
-void setup() {
-  // put your setup code here, to run once:
 
   count = 0;
 
@@ -44,52 +41,96 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(hallsensor), sensor, FALLING); //attach interrupt
   pinMode(hallsensor, INPUT); //setup hall sensor
   myservo.attach(9); //setup pin for servo
-  myservo.write(lockedpos); //default state is locked
-
-  u8x8.setCursor(1, 5);
-  u8x8.print("lock");
-
-
-
+  myservo.write(lockedpos); //default state is locked 
 
 }
 
-void loop() {
-
-  unsigned long currentMillis = millis();
-
+void loop()
+{
+  myservo.write(openpos);
+  u8x8.setCursor(1, 5);
+  u8x8.print("open");
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
   screen();
 
-  if (currentMillis - previousMillis >= 10000) {
-    // save the last time you blinked the LED
-    previousMillis = currentMillis;
-
-
-    if (myservo.read() == lockedpos) {
-      myservo.write(openpos);
-      u8x8.setCursor(1, 5);
-      u8x8.print("open");
-    } else {
-      myservo.write(lockedpos);
-      u8x8.setCursor(1, 5);
-      u8x8.print("lock");
-    }
-  }
+myservo.write(lockedpos);
+  u8x8.setCursor(1, 5);
+  u8x8.print("lock");
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
+  
+  delay(1000);
+  screen();
 }
+
+
+
 
 void sensor () { //interrupt to measure rotations
-  count++;
+  count++; //every time hall effect sensor goes off, add 1 to count
+
 }
 
-void screen () { //function to update screen and serial monitor
+void screen () { //function to update screen and serial monitor 
 
-  noInterrupts();
-  long count_copy = count;  //make a copy of count with interrupts turned off
-  interrupts();
+noInterrupts();
+long count_copy = count;  //make a copy of count with interrupts turned off
+interrupts();
 
 
   u8x8.setCursor(1, 4);
-  u8x8.print(count_copy);
+  u8x8.print(count_copy); 
 
-
+  
 }
