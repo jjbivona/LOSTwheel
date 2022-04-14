@@ -7,5 +7,5 @@ Welcome to the page for the Lockable Open-Source Training Wheel (LOST-Wheel). Th
 
 
 
-# NEW LOGGER APP OUT!
-Download the LOST-Wheel Logger setup file to install the new app. This app incorporates both the arduino IDE and the graphing/data collection in one interface.
+# NEW Lost-Wheel Logger
+Download the LOST-Wheel Logger setup file to install the new app. This version incorporates both the arduino IDE and the graphing/data collection in one interface. The R-based version still exsits under "[OLD] LOST-Wheel Logger R App"
