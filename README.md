@@ -1,5 +1,4 @@
-![wheel photo 1 bkground removed](https://user-images.githubusercontent.com/75329186/163421122-21f5ea1e-231e-4961-a85e-fab1f8a17426.png)
-<img src="wheel photo 1 bkground removed" width="200" height="100">
+![wheel_photo_1_bkground_removed_40](https://user-images.githubusercontent.com/75329186/163421594-2b482d0c-79d0-40cf-802b-c0f973d6411b.png)
 
 # LOST-Wheel
 Welcome to the page for the Lockable Open-Source Training Wheel (LOST-Wheel). This device allows scientists to monitor and control murine voluntary exercise at a fraction of the price of commercially available products.
